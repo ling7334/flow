@@ -27,9 +27,7 @@
 
     function draw() {
       requestAnimationFrame(draw)
-      Myanimate.calculateField()
-      Myanimate.noiseZ += Myanimate.config.noiseSpeed
-      Myanimate.drawParticles()
+      Myanimate.draw()
     }
 
     draw()
