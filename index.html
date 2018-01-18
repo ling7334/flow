@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flow</title>
+    <style>
+    body, html {
+        margin: 0;
+      }
+      
+      canvas {
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script src="./noise.js"></script>
+    <script src="./vector.js"></script>
+    <script src="./particle.js"></script>
+    <script src="./flow.js"></script>
+    <script>
+    let Myanimate = new Flow("#canvas")
+
+    function draw() {
+      requestAnimationFrame(draw)
+      Myanimate.calculateField()
+      Myanimate.noiseZ += Myanimate.config.noiseSpeed
+      Myanimate.drawParticles()
+    }
+
+    draw()
+    </script>
+</body>
+</html>
